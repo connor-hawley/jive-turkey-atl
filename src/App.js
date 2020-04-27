@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import Home from './components/HomeComponent';
+import { ThemeProvider } from 'styled-components';
 import './App.css';
+import Home from './components/HomeComponent';
+import { theme } from './shared/theme';
 
 class App extends Component {
   render() {
     return (
-      <Container>
-        <Home />
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <Home />
+        </Container>
+      </ThemeProvider>
     );
   }
 }
